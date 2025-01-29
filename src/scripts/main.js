@@ -1,17 +1,16 @@
 'use strict';
 
-// write code here
-const butonAddColum = document.querySelector('.append-column');
+const buttonAddColumn = document.querySelector('.append-column');
 
-butonAddColum.addEventListener('click', () => {
+buttonAddColumn.addEventListener('click', () => {
   const firstRow = document.querySelector('tr');
 
   if (firstRow.cells.length >= 10) {
-    butonAddColum.disabled = true;
+    buttonAddColumn.disabled = true;
 
     return;
   }
-  butonRemoveColum.disabled = false;
+  buttonRemoveColumn.disabled = false;
 
   document.querySelectorAll('tr').forEach((row) => {
     const firstCell = row.cells[0];
@@ -26,17 +25,17 @@ butonAddColum.addEventListener('click', () => {
   });
 });
 
-const butonAddRow = document.querySelector('.append-row');
+const buttonAddRow = document.querySelector('.append-row');
 
-butonAddRow.addEventListener('click', () => {
+buttonAddRow.addEventListener('click', () => {
   const rows = document.querySelectorAll('tr');
 
   if (rows.length >= 10) {
-    butonAddRow.disabled = true;
+    buttonAddRow.disabled = true;
 
     return;
   }
-  butonRemoveRow.disabled = false;
+  buttonRemoveRow.disabled = false;
 
   const firstRow = rows[0];
   const cloneRow = firstRow.cloneNode(true);
@@ -44,31 +43,31 @@ butonAddRow.addEventListener('click', () => {
   firstRow.parentNode.appendChild(cloneRow);
 });
 
-const butonRemoveRow = document.querySelector('.remove-row');
+const buttonRemoveRow = document.querySelector('.remove-row');
 
-butonRemoveRow.addEventListener('click', () => {
+buttonRemoveRow.addEventListener('click', () => {
   const rows = document.querySelectorAll('tr');
 
   if (rows.length <= 2) {
-    butonRemoveRow.disabled = true;
+    buttonRemoveRow.disabled = true;
 
     return;
   }
-  butonAddRow.disabled = false;
+  buttonAddRow.disabled = false;
   rows[rows.length - 1].remove();
 });
 
-const butonRemoveColum = document.querySelector('.remove-column');
+const buttonRemoveColumn = document.querySelector('.remove-column');
 
-butonRemoveColum.addEventListener('click', () => {
+buttonRemoveColumn.addEventListener('click', () => {
   const firstRow = document.querySelector('tr');
 
   if (firstRow.cells.length <= 2) {
-    butonRemoveColum.disabled = true;
+    buttonRemoveColumn.disabled = true;
 
     return;
   }
-  butonAddColum.disabled = false;
+  buttonAddColumn.disabled = false;
 
   document.querySelectorAll('tr').forEach((row) => {
     const lastCell = row.cells[row.cells.length - 1];
