@@ -1,5 +1,6 @@
 'use strict';
 
+const buttonRemoveColumn = document.querySelector('.remove-column');
 const buttonAddColumn = document.querySelector('.append-column');
 
 buttonAddColumn.addEventListener('click', () => {
@@ -56,8 +57,6 @@ buttonRemoveRow.addEventListener('click', () => {
   buttonAddRow.disabled = false;
   rows[rows.length - 1].remove();
 });
-
-const buttonRemoveColumn = document.querySelector('.remove-column');
 
 buttonRemoveColumn.addEventListener('click', () => {
   const firstRow = document.querySelector('tr');
